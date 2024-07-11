@@ -1,6 +1,6 @@
 import { OptionsFilter, ComboboxItem } from "@mantine/core";
 
-export const FilterSelect: OptionsFilter = ({ options, search }) => {
+export const filterSelect: OptionsFilter = ({ options, search }) => {
 	const splittedSearch = search.toLowerCase().trim().split(" ");
 	return (options as ComboboxItem[]).filter((option) => {
 		const words = option.label.toLowerCase().trim().split(" ");
