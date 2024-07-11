@@ -1,0 +1,34 @@
+version: "3"
+
+dotenv: [".env", "{{.ENV}}/.env.", "{{.HOME}}/.env"]
+
+tasks:
+  run:prod:
+    cmds:
+      - task: git
+      - task: build
+      - task: pm2:prod
+
+  run:staging:
+    cmds:
+      - task: git
+      - task: build
+      - task: pm2:staging
+
+  git:
+    cmds:
+      - git restore .
+      - git pull origin main
+  build:
+    cmds:
+      - rm -rf ./node_modules
+      - bun install
+      - bun run build
+
+  pm2:prod:
+    cmds:
+      - ./pm2prod.sh
+
+  pm2:staging:
+    cmds:
+      - ./pm2staging.sh
