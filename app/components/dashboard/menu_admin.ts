@@ -7,7 +7,7 @@ import {
 	ChartPieIcon,
 } from "@heroicons/react/24/outline";
 
-export const DashboardMenu = [
+export const MenuAdmin = [
 	{ name: "Dashboard", href: "#", icon: HomeIcon, current: true },
 	{ name: "Team", href: "#", icon: UsersIcon, current: false },
 	{ name: "Projects", href: "#", icon: FolderIcon, current: false },
@@ -16,7 +16,7 @@ export const DashboardMenu = [
 	{ name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];
 
-export const DashboardMenuExtra = [
+export const MenuAdminExtra = [
 	{ id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
 	{ id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
 	{ id: 3, name: "Workcation", href: "#", initial: "W", current: false },

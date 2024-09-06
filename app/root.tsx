@@ -7,7 +7,7 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import { createTheme, MantineProvider } from "@mantine/core";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -29,8 +29,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
 	return (
-		<MantineProvider>
+		<MantineProvider theme={theme}>
 			<Outlet />
 		</MantineProvider>
 	);
 }
+const theme = createTheme({
+	fontFamily: "Inter, sans-serif",
+});
